@@ -49,8 +49,12 @@ export const runDev = async () =>
   });
 
 export type EmpStorybookCli = {
-  storybook: (config: StorybookConfig) => StorybookConfig;
-  webpack: StorybookConfig['webpackFinal'];
+  storybook?: (config: StorybookConfig) => StorybookConfig;
+  webpack?: StorybookConfig['webpackFinal'];
+  theme?: {
+    base?: 'light' | 'dark';
+    brandTitle?: string;
+  };
 };
 
 export { StorybookConfig } from '@storybook/core-common/types/index';
