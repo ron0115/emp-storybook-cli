@@ -38,5 +38,10 @@ jobs:
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
 
-      - name: Build
-        run: yarn build
+      - name: Release
+        run: |
+          yarn build
+          npm run release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
