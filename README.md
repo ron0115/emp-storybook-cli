@@ -31,9 +31,12 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
  * @type {EmpStorybookCli}
  */
 module.exports = {
+  // https://storybook.js.org/docs/react/configure/overview
   storybook: config => {
     return {
-      ...config
+      ...config,
+      // override your storybook config
+      stories: [path.resolve(__dirname, './src/**/*.stories.@(jsx|tsx)')],
     }
   },
   webpack: (config) => {
