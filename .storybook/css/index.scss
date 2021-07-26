@@ -1,0 +1,18 @@
+@import './lib/normalize';
+@import './lib/reset';
+// @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+body {
+  color: #fff;
+  background: #333333;
+}
+pre code {
+  color: #fff;
+}
+.sbdocs-p {
+  margin: 0 !important;
+}
+a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: cadetblue;
+}

@@ -1,0 +1,11 @@
+<script src="//web.yystatic.com/public/global/mobile/lib/zepto.min.js"></script>
+<script>
+  window.jQuery = window.$
+  // 默认打开所有子tab
+  setTimeout(function () {
+    window.top.document
+      .querySelectorAll('.sidebar-expander')
+      .forEach(item => item.click())
+  }, 1000)
+</script>
+<script src="//udbres.yy.com/js/oauth/udbsdk/proxy/udbsdkproxy.min.js"></script>

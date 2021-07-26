@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+@mixin clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin ir() {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    direction: ltr;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -999em;
+    br {
+        display: none;
+    }
+}
+
+// text overflow
+// -------------------------
+// requires inline-block or block for proper styling
+@mixin text-overflow() {
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// @mixin text-overflow($row:1) {
+//     width:auto;
+//     display: -webkit-box;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     -webkit-line-clamp: $row;
+//     -webkit-box-orient: vertical;
+// }
+
+@mixin scroll-bar($width: 14px, $color: #fff) {
+    overflow: auto;
+    &::-webkit-scrollbar-track {
+        border-radius: $width;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar {
+        width: $width;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: $width;
+        background-color: rgba($color, .2);
+        &:hover {
+            background-color: rgba($color, .4);
+        }
+    }
+}
