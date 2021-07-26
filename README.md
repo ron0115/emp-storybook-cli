@@ -1,12 +1,16 @@
 # emp-storybook-cli
 
-> 0配置Storybook React组件库 CLI
+> 0 配置 Storybook React 组件库 CLI
 
 ## 使用
 
+创建 `*.stories.tsx`, 即可为你组件创建 storybook 文档！
+
+> 默认目录：`root_dir/src`或者`root_dir/stories`
+
 ### CLI
 
-向`package.json`中添加对应script
+向`package.json`中添加对应 script
 
 ```json
 {
@@ -17,11 +21,7 @@
 }
 ```
 
-### 说明
-
-于`root_dir/src`或者`root_dir/stories`目录下 创建 `*.stories.tsx`, 即可为你组件创建storybook文档！
-
-### 如何覆盖默认的Storybook配置
+### 自定义 Storybook 或者 webpack 配置
 
 ```js
 const {EmpStorybookCli} = require('emp-storybook-cli')
@@ -46,9 +46,9 @@ module.exports = {
 
 ## 注意事项
 
-### 仓库请使用yarn
+### 仓库请使用 yarn
 
-不限于@emp项目，但仅支持`webpack@5`以上版本的现有项目，并且需要在项目中使用`yarn resolutions`锁定webpack和相关插件的版本
+不限于@emp 项目，但仅支持`webpack@5`以上版本的现有项目，并且需要在项目中使用`yarn resolutions`锁定 webpack 和相关插件的版本
 
 > 拷贝如下代码到`package.json`追加到配置末尾即可。
 
@@ -66,7 +66,8 @@ module.exports = {
   }
 }
 ```
+
 ## 已知问题
 
-1. storybook仍不支持remotes包，由于源码仍未兼容bootstrap写法, 详见
-> https://webpack.docschina.org/concepts/module-federation/#troubleshooting
+1. storybook 仍不支持 remotes 包，由于源码仍未兼容 bootstrap 写法, 详见
+   https://github.com/storybookjs/storybook/issues/15177
