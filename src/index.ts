@@ -39,7 +39,7 @@ export const runBuild = async () =>
   await runStorybook({
     command: 'build-storybook',
     commandParams: ['--docs'],
-    outputDir: 'storybook-static',
+    outputDir: 'public',
   });
 
 export const runDev = async () =>
