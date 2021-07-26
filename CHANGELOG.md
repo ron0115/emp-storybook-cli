@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.0...v1.0.1) (2021-07-26)
+
+
+### Bug Fixes
+
+* css plugin version ([1dff73d](https://github.com/ron0115/emp-storybook-cli/commit/1dff73d4fa669d93fae8aab18db98f7894d31871))
+
 # 1.0.0 (2021-07-26)
 
 
