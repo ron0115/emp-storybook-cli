@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.1...v1.0.2) (2021-07-27)
+
+
+### Features
+
+* support override theme ([9a3a5d1](https://github.com/ron0115/emp-storybook-cli/commit/9a3a5d147e60e43bdaac92428a7bee6498edc977))
+
 ## [1.0.2](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.1...v1.0.2) (2021-07-26)
 
 
