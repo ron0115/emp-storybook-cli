@@ -55,7 +55,7 @@ export type EmpStorybookCli = {
     base?: 'light' | 'dark';
     brandTitle?: string;
   };
-  managerWebpack?: StorybookConfig['webpackFinal']
+  managerWebpack?: StorybookConfig['webpackFinal'];
 };
 
 export { StorybookConfig } from '@storybook/core-common/types/index';
