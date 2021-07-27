@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.2...v1.0.3) (2021-07-27)
+
+
+### Features
+
+* custom theme config of storybook ([ca5dc18](https://github.com/ron0115/emp-storybook-cli/commit/ca5dc189ed56d181e859438c29574db721e18882))
+
 ## [1.0.2](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.1...v1.0.2) (2021-07-27)
 
 
