@@ -7,12 +7,14 @@ const resolveLocal = (relativePath) => path.resolve(__dirname, relativePath);
 const basePath = resolveApp('./src');
 const storyPath = resolveApp('./stories');
 const packageJSON = require(resolveLocal('../package.json'));
-const webpack = require('webpack')
+const webpack = require('webpack');
 const getConfigFile = (path = './storybook.config.js') => {
   const jsConfigCb = resolveApp(path);
   return fs.existsSync(jsConfigCb) && require(jsConfigCb);
 };
 const projectConfig = getConfigFile();
+const projectPkgJSON = getConfigFile('./package.json');
+
 const getConfig = (
   config = {
     rules: [],
@@ -152,16 +154,24 @@ const defaultConfig = {
   },
   getConfig,
   managerWebpack: (config) => {
-    config.plugins.push(new webpack.DefinePlugin({
-      // __THEME_TITLE__: projectConfig.theme.brandTitle || packageJSON.name,
-      // __THEME_BASE__: projectConfig.theme.base,
-      __THEME__: {
-        base: JSON.stringify((projectConfig.theme && projectConfig.theme.base) || 'light'),
-        brandTitle: JSON.stringify((projectConfig.theme && projectConfig.theme.brandTitle) || packageJSON.name)
-      }
-    }))
-    return config
-  }
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        // __THEME_TITLE__: projectConfig.theme.brandTitle || packageJSON.name,
+        // __THEME_BASE__: projectConfig.theme.base,
+        __THEME__: {
+          base: JSON.stringify(
+            (projectConfig.theme && projectConfig.theme.base) || 'light'
+          ),
+          brandTitle: JSON.stringify(
+            (projectConfig.theme && projectConfig.theme.brandTitle) ||
+              projectPkgJSON.description ||
+              projectPkgJSON.name
+          ),
+        },
+      })
+    );
+    return config;
+  },
 };
 
 let config = defaultConfig;

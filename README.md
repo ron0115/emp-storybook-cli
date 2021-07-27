@@ -42,6 +42,12 @@ module.exports = {
   webpack: (config) => {
     config.plugins.push(new ModuleFederationPlugin({...}))
     return config
+  },
+  theme: {
+    // auto get description/name in package.json, or custom by brandTitle
+    brandTitle: 'EMP组件库',
+    // 'light' | 'dark'
+    theme: 'light'
   }
 }
 
