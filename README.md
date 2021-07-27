@@ -23,7 +23,7 @@
 
 ### 自定义 Storybook 配置
 
-包含 storybook config，扩展 webpack 配置，storybook 主题相关配置，见下方用法
+在项目根目录新建`storybook.config.js`,相关配置项见如下注释
 
 ```js
 const {EmpStorybookCli} = require('emp-storybook-cli')
@@ -33,7 +33,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
  * @type {EmpStorybookCli}
  */
 module.exports = {
-  // https://storybook.js.org/docs/react/configure/overview
+  // custom storybook config: https://storybook.js.org/docs/react/configure/overview
   storybook: config => {
     return {
       ...config,
