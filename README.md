@@ -59,9 +59,13 @@ module.exports = {
 
 ## 注意事项
 
-### 仓库请使用 yarn
+### 使用 yarn resolutions
 
-不限于@emp 项目，但仅支持`webpack@5`以上版本的现有项目，并且需要在项目中使用`yarn resolutions`锁定 webpack 和相关插件的版本
+> 如果你的项目不基于 webpack 构建，可忽略以下事项
+
+仅支持`webpack > 5` 的现有项目
+
+注意：请在项目中使用`yarn resolutions`锁定 webpack 和相关插件的版本，防止构建失败。
 
 > 拷贝如下代码到`package.json`追加到配置末尾即可。
 
