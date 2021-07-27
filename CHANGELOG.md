@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.3...v1.0.4) (2021-07-27)
+
+
+### Features
+
+* custom manager webpack config ([70a1c39](https://github.com/ron0115/emp-storybook-cli/commit/70a1c397b1b32591a1432ac26bbedfb2b3afab0e))
+
 ## [1.0.3](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.2...v1.0.3) (2021-07-27)
 
 
