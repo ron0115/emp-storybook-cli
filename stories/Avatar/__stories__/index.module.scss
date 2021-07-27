@@ -1,0 +1,37 @@
+.avatar {
+  position: relative;
+  background: red;
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+  border-radius: 100%;
+  margin: 0 auto;
+  &:hover {
+    color: red;
+  }
+}
+
+.img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  border-radius: 100%;
+  //   &:hover{
+  //       border: 1px solid blue;
+  //   }
+}
+.slot {
+  background: linear-gradient(
+      -77deg,
+      #ed8088 0%,
+      #eb7489 26%,
+      #e86789 51%,
+      #d853a3 100%
+    ),
+    linear-gradient(#ffffff, #ffffff);
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

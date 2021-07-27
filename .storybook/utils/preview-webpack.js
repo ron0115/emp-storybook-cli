@@ -1,12 +1,12 @@
-
-const path = require('path')
+const path = require('path');
 const resolveApp = (relativePath) => path.resolve(process.cwd(), relativePath);
 const basePath = resolveApp('./src');
 const storyPath = resolveApp('./stories');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { projectConfig } = require('emp-storybook-cli/.storybook/utils/common');
-const { customThemeDefined } = require('emp-storybook-cli/.storybook/utils/manager-webpack');
-const resolveLocal = (relativePath) => path.resolve(__dirname, `../${relativePath}`);
+const { projectConfig } = require('./common');
+const { customThemeDefined } = require('./manager-webpack');
+const resolveLocal = (relativePath) =>
+  path.resolve(__dirname, `../${relativePath}`);
 
 const packageJSON = require(resolveLocal('../package.json'));
 const getPreviewWebpackConfig = (
@@ -111,5 +111,5 @@ const getPreviewWebpackConfig = (
 };
 
 module.exports = {
-  getPreviewWebpackConfig
-}
+  getPreviewWebpackConfig,
+};

@@ -1,4 +1,3 @@
-
 const path = require('path');
 const fs = require('fs-extra');
 
@@ -14,5 +13,5 @@ const projectConfig = getConfigFile();
 module.exports = {
   getConfigFile,
   resolveApp,
-  projectConfig
-}
+  projectConfig,
+};

@@ -1,5 +1,4 @@
-
-const { getConfigFile, projectConfig } = require('emp-storybook-cli/.storybook/utils/common');
+const { getConfigFile, projectConfig } = require('./common');
 const webpack = require('webpack');
 
 const projectPkgJSON = getConfigFile('./package.json');
@@ -20,14 +19,14 @@ const customThemeDefined = (config) => {
     })
   );
   return config;
-}
+};
 
 const getManagerWebpackConfig = (config) => {
-  config = customThemeDefined(config)
+  config = customThemeDefined(config);
   const webpackCb = projectConfig.managerWebpack;
   return webpackCb ? webpackCb(config) : config;
-}
+};
 module.exports = {
   getManagerWebpackConfig,
-  customThemeDefined
-}
+  customThemeDefined,
+};

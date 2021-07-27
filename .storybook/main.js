@@ -1,8 +1,7 @@
 const fs = require('fs-extra');
 const { getPreviewWebpackConfig } = require('./utils/preview-webpack');
 const { getManagerWebpackConfig } = require('./utils/manager-webpack');
-const { projectConfig, resolveApp } = require('emp-storybook-cli/.storybook/utils/common');
-
+const { projectConfig, resolveApp } = require('./utils/common');
 
 const defaultConfig = {
   core: {
@@ -42,7 +41,7 @@ const defaultConfig = {
   // preview webpack
   webpackFinal: (config) => getPreviewWebpackConfig(config),
   // manager webpack
-  managerWebpack: (config) => getManagerWebpackConfig(config)
+  managerWebpack: (config) => getManagerWebpackConfig(config),
 };
 
 let config = defaultConfig;
