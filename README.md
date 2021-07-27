@@ -41,11 +41,13 @@ module.exports = {
       stories: [path.resolve(__dirname, './src/**/*.stories.@(jsx|tsx)')],
     }
   },
-  // custom webpack config
-  webpack: (config) => {
+  // custom preview webpack config
+  previewWebpack: (config) => {
     config.plugins.push(new ModuleFederationPlugin({...}))
     return config
   },
+  // custom preview webpack config
+  managerWebpack: config => config,
   // custom theme config
   theme: {
     // auto get description/name in package.json, or custom by brandTitle

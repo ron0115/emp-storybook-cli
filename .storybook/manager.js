@@ -2,7 +2,7 @@ import { addons } from '@storybook/addons';
 import { create } from '@storybook/theming/create';
 
 const theme = create({
-  base: __THEME__.base || 'light',
+  base: __THEME__.base,
   brandTitle: __THEME__.brandTitle,
 });
 

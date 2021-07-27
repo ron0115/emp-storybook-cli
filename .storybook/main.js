@@ -1,118 +1,8 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs-extra');
+const { getPreviewWebpackConfig } = require('./utils/preview-webpack');
+const { getManagerWebpackConfig } = require('./utils/manager-webpack');
+const { projectConfig, resolveApp } = require('emp-storybook-cli/.storybook/utils/common');
 
-const resolveApp = (relativePath) => path.resolve(process.cwd(), relativePath);
-const resolveLocal = (relativePath) => path.resolve(__dirname, relativePath);
-const basePath = resolveApp('./src');
-const storyPath = resolveApp('./stories');
-const packageJSON = require(resolveLocal('../package.json'));
-const webpack = require('webpack');
-const getConfigFile = (path = './storybook.config.js') => {
-  const jsConfigCb = resolveApp(path);
-  return fs.existsSync(jsConfigCb) && require(jsConfigCb);
-};
-const projectConfig = getConfigFile();
-const projectPkgJSON = getConfigFile('./package.json');
-
-const getConfig = (
-  config = {
-    rules: [],
-  }
-) => {
-  const include = [basePath, storyPath, resolveLocal('../.storybook')];
-  // CSS
-  const cssModuleReg = /(.*\.module).(s?css)+$/;
-  const cssNormalReg = /^(?!.*\.module).*\.(s?css)+$/;
-  const sassResouceLoader = {
-    loader: require.resolve('sass-resources-loader'),
-    options: {
-      resources: resolveLocal('./css/globals.scss'),
-    },
-  };
-  config.module.rules = config.module.rules.filter(
-    (rule) => !rule.test.toString().includes('css')
-  );
-  // css-modules
-  config.module.rules.push({
-    test: cssModuleReg,
-    use: [
-      'style-loader',
-      {
-        loader: require.resolve('css-loader'),
-        options: {
-          modules: {
-            localIdentName: '[name]__[local]__[hash:base64:5]',
-          },
-        },
-      },
-      'sass-loader',
-      sassResouceLoader,
-    ],
-    sideEffects: true,
-    include,
-  });
-
-  // normal css
-  config.module.rules.push({
-    test: cssNormalReg,
-    use: [
-      {
-        loader: require.resolve('postcss-loader'),
-        options: {
-          postcssOptions: {
-            parser: 'postcss-scss',
-          },
-          // https://juejin.im/post/5b2cc251f265da5976548453
-        },
-      },
-      {
-        loader: MiniCssExtractPlugin.loader,
-        // TODO: 非css-modules的hmr失效
-        options: {
-          // hmr: true,
-          // reloadAll: true
-        },
-      },
-      'css-loader',
-      'sass-loader',
-      sassResouceLoader,
-    ].filter(Boolean),
-    include,
-    // https://github.com/storybookjs/storybook/issues/4802#issuecomment-446233703
-    sideEffects: true, // 👈 ADD THIS
-  });
-
-  config.plugins.push(new MiniCssExtractPlugin());
-
-  config.resolve.extensions.push('.ts', '.tsx');
-
-  config.resolve.alias = {
-    '@': basePath,
-    '@stories': storyPath,
-    src: basePath,
-  };
-  // webpack5
-  config.resolve.fallback = {
-    fs: false,
-    tls: false,
-    net: false,
-    path: false,
-    zlib: false,
-    http: false,
-    https: false,
-    stream: false,
-    crypto: false,
-    assert: false,
-  };
-  // console.log(config.module.rules)
-  config.module.rules[0].exclude = new RegExp(
-    `node_modules\/(?!(${packageJSON.name.replace('/', '/')})\/).*`
-  );
-
-  const webpackCb = projectConfig.webpack;
-  return webpackCb ? webpackCb(config) : config;
-};
 
 const defaultConfig = {
   core: {
@@ -149,29 +39,10 @@ const defaultConfig = {
     },
   },
   addons: ['@storybook/addon-docs', '@storybook/addon-actions'],
-  webpackFinal: (config) => {
-    return getConfig(config);
-  },
-  getConfig,
-  managerWebpack: (config) => {
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        // __THEME_TITLE__: projectConfig.theme.brandTitle || packageJSON.name,
-        // __THEME_BASE__: projectConfig.theme.base,
-        __THEME__: {
-          base: JSON.stringify(
-            (projectConfig.theme && projectConfig.theme.base) || 'light'
-          ),
-          brandTitle: JSON.stringify(
-            (projectConfig.theme && projectConfig.theme.brandTitle) ||
-              projectPkgJSON.description ||
-              projectPkgJSON.name
-          ),
-        },
-      })
-    );
-    return config;
-  },
+  // preview webpack
+  webpackFinal: (config) => getPreviewWebpackConfig(config),
+  // manager webpack
+  managerWebpack: (config) => getManagerWebpackConfig(config)
 };
 
 let config = defaultConfig;
@@ -181,5 +52,3 @@ if (storybookCb) {
 }
 // Export a function. Accept the base config as the only param.
 module.exports = config;
-module.exports.packageJSON = packageJSON;
-module.exports.projectConfig = projectConfig;

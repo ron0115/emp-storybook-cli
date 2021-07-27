@@ -15,7 +15,7 @@ global.STORYBOOK_REACT_CLASSES = {}
 
 export const parameters = {
   options: {
-    theme: themes.light,
+    theme: themes[__THEME__.base],
     storySort: { order: ['文档', '组件'] },
     viewMode: 'docs'
   },
@@ -26,7 +26,7 @@ export const parameters = {
       type: 'tsx'
     },
     previewSource: 'open',
-    theme: themes.light
+    theme: themes[__THEME__.base]
   }
 }
 // addDecorator(withKnobs)
