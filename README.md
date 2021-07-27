@@ -21,7 +21,9 @@
 }
 ```
 
-### 自定义 Storybook 或者 webpack 配置
+### 自定义 Storybook 配置
+
+包含 storybook config，扩展 webpack 配置，storybook 主题相关配置，见下方用法
 
 ```js
 const {EmpStorybookCli} = require('emp-storybook-cli')
@@ -39,10 +41,12 @@ module.exports = {
       stories: [path.resolve(__dirname, './src/**/*.stories.@(jsx|tsx)')],
     }
   },
+  // custom webpack config
   webpack: (config) => {
     config.plugins.push(new ModuleFederationPlugin({...}))
     return config
   },
+  // custom theme config
   theme: {
     // auto get description/name in package.json, or custom by brandTitle
     brandTitle: 'EMP组件库',
