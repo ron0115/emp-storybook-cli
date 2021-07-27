@@ -1,5 +1,5 @@
 {
-  "name": "@local/emp-storybook-cli",
+  "name": "emp-storybook-cli",
   "author": "liangzhirong",
   "module": "dist/emp-storybook-cli.esm.js",
   "version": "1.0.2",
