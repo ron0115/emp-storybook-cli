@@ -1,7 +1,11 @@
 const fs = require('fs-extra');
 const { getPreviewWebpackConfig } = require('./utils/preview-webpack');
 const { getManagerWebpackConfig } = require('./utils/manager-webpack');
-const { projectConfig, resolveApp } = require('./utils/common');
+const {
+  projectConfig,
+  resolveApp,
+  resolveAppForGlob,
+} = require('./utils/common');
 
 const defaultConfig = {
   core: {
@@ -9,9 +13,9 @@ const defaultConfig = {
   },
   stories: [
     fs.existsSync(resolveApp('./stories')) &&
-      resolveApp('./stories/**/*.stories.@(jsx|tsx)'),
+      resolveAppForGlob('./stories/**/*.stories.@(jsx|tsx)'),
     fs.existsSync(resolveApp('./src')) &&
-      resolveApp('./src/**/*.stories.@(jsx|tsx)'),
+      resolveAppForGlob('./src/**/*.stories.@(jsx|tsx)'),
   ].filter(Boolean),
   typescript: {
     // also valid 'react-docgen-typescript' | false
@@ -46,7 +50,7 @@ const defaultConfig = {
 
 const genConfig = (config) => {
   if (config.stories) {
-    config.stories = config.stories.map((item) => resolveApp(item));
+    config.stories = config.stories.map((item) => resolveAppForGlob(item));
   }
   return config;
 };

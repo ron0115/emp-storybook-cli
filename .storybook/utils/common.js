@@ -3,6 +3,11 @@ const fs = require('fs-extra');
 
 const resolveApp = (relativePath) => {
   // fix process.cwd get wrong globs of using \
+  return path.join(process.cwd(), relativePath);
+};
+
+const resolveAppForGlob = (relativePath) => {
+  // fix process.cwd get wrong globs of using \
   return path.posix.join(process.cwd().split(path.sep).join('/'), relativePath);
 };
 
@@ -17,4 +22,5 @@ module.exports = {
   getConfigFile,
   resolveApp,
   projectConfig,
+  resolveAppForGlob,
 };
