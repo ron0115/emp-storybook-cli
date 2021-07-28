@@ -44,10 +44,22 @@ const defaultConfig = {
   managerWebpack: (config) => getManagerWebpackConfig(config),
 };
 
+const genConfig = (config) => {
+  if (config.stories) {
+    config.stories = config.stories.map((item) => resolveApp(item));
+  }
+  return config;
+};
+
 let config = defaultConfig;
-const storybookCb = projectConfig.storybook;
-if (storybookCb) {
-  config = storybookCb(defaultConfig);
+const storybook = projectConfig.storybook;
+if (storybook && typeof storybook === 'function') {
+  config = storybook(defaultConfig);
+} else if (storybook && typeof storybook === 'object') {
+  config = {
+    ...defaultConfig,
+    ...genConfig(storybook),
+  };
 }
 // Export a function. Accept the base config as the only param.
 module.exports = config;

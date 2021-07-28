@@ -1,9 +1,8 @@
 const path = require('path');
-const resolveApp = (relativePath) => path.resolve(process.cwd(), relativePath);
+const { projectConfig, resolveApp } = require('./common');
 const basePath = resolveApp('./src');
 const storyPath = resolveApp('./stories');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { projectConfig } = require('./common');
 const { customThemeDefined } = require('./manager-webpack');
 const resolveLocal = (relativePath) =>
   path.resolve(__dirname, `../${relativePath}`);
