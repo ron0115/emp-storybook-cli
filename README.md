@@ -6,6 +6,8 @@
 
 ### 全局安装
 
+> install once , run any where
+
 安装
 
 ```sh
@@ -46,15 +48,10 @@ yarn add emp-storybook-cli -D
 
 3. 执行 cli
 
-开发
-
 ```sh
+# 开发
 yarn docs:dev
-```
-
-构建
-
-```sh
+# 构建
 yarn docs:build
 ```
 
