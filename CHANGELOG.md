@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.6...v1.0.7) (2021-07-28)
+
+
+### Bug Fixes
+
+* transform path only for stories glob ([674c2f7](https://github.com/ron0115/emp-storybook-cli/commit/674c2f7381862a2f1adc37f7b6a5705aa46e7b39))
+
 ## [1.0.6](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.5...v1.0.6) (2021-07-28)
 
 
