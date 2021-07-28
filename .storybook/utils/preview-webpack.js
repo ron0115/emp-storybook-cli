@@ -7,19 +7,19 @@ const { customThemeDefined } = require('./manager-webpack');
 const resolveLocal = (relativePath) =>
   path.resolve(__dirname, `../../${relativePath}`);
 
-const packageJSON = require(resolveLocal('./package.json'));
+const packageJSON = require(resolveLocal('package.json'));
 const getPreviewWebpackConfig = (
   config = {
     rules: [],
   }
 ) => {
-  const include = [basePath, storyPath, resolveLocal('./.storybook')]; // CSS
+  const include = [basePath, storyPath, resolveLocal('.storybook')]; // CSS
   const cssModuleReg = /(.*\.module).(s?css)+$/;
   const cssNormalReg = /^(?!.*\.module).*\.(s?css)+$/;
   const sassResouceLoader = {
     loader: require.resolve('sass-resources-loader'),
     options: {
-      resources: resolveLocal('./.storybook/css/globals.scss'),
+      resources: resolveLocal('.storybook/css/globals.scss'),
     },
   };
   config.module.rules = config.module.rules.filter(
@@ -58,7 +58,9 @@ const getPreviewWebpackConfig = (
         },
       },
       {
-        loader: MiniCssExtractPlugin.loader, // TODO: 非css-modules的hmr失效
+        // TODO: 非css-modules的hmr失效
+        // TOOD: 先锁定webpack5.0.0，如果升级，考虑webpack5跟mimicss插件一起升级才能兼容
+        loader: MiniCssExtractPlugin.loader,
         options: {
           // hmr: true,
           // reloadAll: true
@@ -97,7 +99,7 @@ const getPreviewWebpackConfig = (
   config.module.rules[0].exclude = new RegExp(
     `node_modules\/(?!(${packageJSON.name.replace('/', '/')})\/).*`
   ); // useful in global install mode
-  config.module.rules[0].include.push(resolveLocal('./.storybook'));
+  config.module.rules[0].include.push(resolveLocal('.storybook'));
 
   config = customThemeDefined(config);
 
