@@ -29,7 +29,6 @@
     "docs:dev": "node ./bin/cli.js dev",
     "docs:build": "node ./bin/cli.js build"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -51,6 +50,10 @@
       "limit": "10 KB"
     }
   ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
   "dependencies": {
     "@storybook/addon-actions": "^6.4.0-alpha.2",
     "@storybook/addon-docs": "^6.4.0-alpha.2",
