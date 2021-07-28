@@ -78,7 +78,9 @@
     "sass-loader": "^12.1.0",
     "sass-resources-loader": "^2.2.3",
     "style-loader": "^3.2.1",
-    "webpack": "5"
+    "webpack": "^5.0.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
