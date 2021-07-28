@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.8...v1.0.9) (2021-07-28)
+
+
+### Bug Fixes
+
+* support global install ([8f41697](https://github.com/ron0115/emp-storybook-cli/commit/8f416977948403d4e5d34977b42a489bfed27dae))
+
 ## [1.0.8](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.7...v1.0.8) (2021-07-28)
 
 
