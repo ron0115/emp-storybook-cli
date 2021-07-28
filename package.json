@@ -2,7 +2,7 @@
   "name": "emp-storybook-cli",
   "author": "liangzhirong",
   "module": "dist/emp-storybook-cli.esm.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     ".storybook"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -26,7 +26,8 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "release": "semantic-release",
-    "docs:dev": "node ./bin/cli.js dev"
+    "docs:dev": "node ./bin/cli.js dev",
+    "docs:build": "node ./bin/cli.js build"
   },
   "peerDependencies": {},
   "husky": {

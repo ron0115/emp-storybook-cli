@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.4...v1.0.5) (2021-07-27)
+
+
+### Bug Fixes
+
+* update node-sass ([fc7423f](https://github.com/ron0115/emp-storybook-cli/commit/fc7423ffec0e58ba02f11eb03f3558d439d59e46))
+
 ## [1.0.4](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.3...v1.0.4) (2021-07-27)
 
 
