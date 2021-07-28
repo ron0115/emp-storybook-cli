@@ -4,7 +4,7 @@ const execa = require('execa');
 const { mkdirp, remove, writeFileSync } = require('fs-extra');
 const { join, resolve } = require('path');
 
-jest.setTimeout(1000 * 60 * 5);
+jest.setTimeout(1000 * 60 * 10);
 
 const genPath = join(__dirname, '../public');
 
