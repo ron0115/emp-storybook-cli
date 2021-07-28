@@ -79,15 +79,13 @@ module.exports = {
 
 ## 注意事项
 
-### 请使用 `yarn resolutions`
-
-如果你项目中依赖有 webpack，请确保支持`webpack > 5`
+### 关于 webpack5
 
 > 如果你的项目不基于 webpack 构建，可忽略以下事项
 
-注意：请在项目中使用`yarn resolutions`锁定 webpack 和相关插件的版本，防止与现有版本冲突导致构建失败。
+如果你项目中依赖有 webpack，请确保支持`webpack > 5`，并且请在项目中使用`yarn resolutions`锁定 webpack 和相关插件的版本，防止与现有版本冲突导致构建失败。
 
-> 拷贝如下代码到`package.json`追加到配置末尾即可。
+> 拷贝如下代码到`package.json`即可。
 
 ```json
 {
@@ -100,7 +98,7 @@ module.exports = {
     "terser-webpack-plugin": "^5.0.0",
     "webpack-dev-middleware": "^4.1.0",
     "webpack-virtual-modules": "^0.4.2",
-    "mini-css-extract-plugin": "^0.9.0"
+    "mini-css-extract-plugin": "^1.3.9"
   }
 }
 ```
