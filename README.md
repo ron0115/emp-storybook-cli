@@ -4,6 +4,12 @@
 
 ## 使用
 
+0. 安装 CLI
+
+```sh
+yarn add emp-storybook-cli -D
+```
+
 1. 创建 `*.stories.tsx`, 即可为你组件创建 storybook 文档！
 
 > 默认匹配目录：`root_dir/src`或者`root_dir/stories`，可通过`storybook.config.js`覆盖配置
