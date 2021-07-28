@@ -73,28 +73,11 @@ module.exports = {
 
 ## 注意事项
 
-### webpack4 构建
+### 请使用 `yarn resolutions`
 
-```js
-module.exports = {
-  // custom storybook config: https://storybook.js.org/docs/react/configure/overview
-  storybook: (config) => {
-    return {
-      ...config,
-      builder: 'webpack4',
-      // override your storybook config
-    };
-  },
-};
-```
-
-### webpack5 构建
-
-**请使用 `yarn resolutions`**
+如果你项目中依赖有 webpack，请确保支持`webpack > 5`
 
 > 如果你的项目不基于 webpack 构建，可忽略以下事项
-
-仅支持`webpack > 5` 的现有项目
 
 注意：请在项目中使用`yarn resolutions`锁定 webpack 和相关插件的版本，防止与现有版本冲突导致构建失败。
 
