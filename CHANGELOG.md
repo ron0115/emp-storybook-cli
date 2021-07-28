@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.5...v1.0.6) (2021-07-28)
+
+
+### Bug Fixes
+
+* stories glob error in windows ([a2d4e5b](https://github.com/ron0115/emp-storybook-cli/commit/a2d4e5b903d25cf264d2fdffb8a12bd5619fec6b))
+
 ## [1.0.5](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.4...v1.0.5) (2021-07-27)
 
 
