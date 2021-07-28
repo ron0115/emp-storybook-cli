@@ -73,7 +73,24 @@ module.exports = {
 
 ## 注意事项
 
-### 使用 yarn resolutions
+### webpack4 构建
+
+```js
+module.exports = {
+  // custom storybook config: https://storybook.js.org/docs/react/configure/overview
+  storybook: (config) => {
+    return {
+      ...config,
+      builder: 'webpack4',
+      // override your storybook config
+    };
+  },
+};
+```
+
+### webpack5 构建
+
+**请使用 `yarn resolutions`**
 
 > 如果你的项目不基于 webpack 构建，可忽略以下事项
 
@@ -99,7 +116,7 @@ module.exports = {
 }
 ```
 
-## 已知问题
+#### 已知问题
 
-1. storybook 仍不支持 remotes 包，由于源码仍未兼容 bootstrap 写法, 详见
+1. webpack5 模式下，storybook 仍不支持 remotes 包，由于源码仍未兼容 bootstrap 写法, 详见
    https://github.com/storybookjs/storybook/issues/15177
