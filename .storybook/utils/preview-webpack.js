@@ -1,11 +1,8 @@
-const path = require('path');
-const { projectConfig, resolveApp } = require('./common');
+const { projectConfig, resolveApp, resolveLocal } = require('./common');
 const basePath = resolveApp('./src');
 const storyPath = resolveApp('./stories');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { customThemeDefined } = require('./manager-webpack');
-const resolveLocal = (relativePath) =>
-  path.resolve(__dirname, `../../${relativePath}`);
 
 const packageJSON = require(resolveLocal('package.json'));
 const getPreviewWebpackConfig = (
@@ -97,8 +94,9 @@ const getPreviewWebpackConfig = (
   };
 
   config.module.rules[0].exclude = new RegExp(
-    `node_modules\/(?!(${packageJSON.name.replace('/', '/')})\/).*`
-  ); // useful in global install mode
+    `node_modules\/(?!(${packageJSON.name})\/).*`
+  );
+  // useful in global install mode
   config.module.rules[0].include.push(resolveLocal('.storybook'));
 
   config = customThemeDefined(config);
