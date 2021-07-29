@@ -4,26 +4,7 @@
 
 ## 使用
 
-### 全局安装
-
-> install once , run any where
-
-安装
-
-```sh
-npm i -g emp-storybook-cli
-```
-
-运行 `dev` / `build`
-
-```sh
-# 调试
-emp-storybook dev
-# 构建
-emp-storybook build
-```
-
-### 局部安装
+### 安装
 
 0. 安装 CLI
 
