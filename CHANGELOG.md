@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.11...v1.0.12) (2021-07-29)
+
+
+### Bug Fixes
+
+* update react for global mode ([d2d4d36](https://github.com/ron0115/emp-storybook-cli/commit/d2d4d36201ab3d344550a2f3b276905612ced6e7))
+
 ## [1.0.11](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.10...v1.0.11) (2021-07-29)
 
 
