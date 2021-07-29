@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.12...v1.0.13) (2021-07-29)
+
+
+### Bug Fixes
+
+* bug in global mode ([f77eff6](https://github.com/ron0115/emp-storybook-cli/commit/f77eff613a7ef0e8a9461029d9459987f663f71f))
+
 ## [1.0.12](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.11...v1.0.12) (2021-07-29)
 
 
