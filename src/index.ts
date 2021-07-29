@@ -17,7 +17,7 @@ export const runStorybook = ({
       params.push(outputDir);
     }
     const spawned = spawn(
-      path.join('node_modules', '.bin', command),
+      path.join(__dirname, '../node_modules', '.bin', command),
       [...params, ...commandParams],
       {
         stdio: 'inherit',

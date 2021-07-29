@@ -5,6 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { customThemeDefined } = require('./manager-webpack');
 
 const packageJSON = require(resolveLocal('package.json'));
+
+const requireLocal = (i) =>
+  require.resolve(i, {
+    paths: [resolveLocal(`node_modules/${i}`)],
+  });
+
 const getPreviewWebpackConfig = (
   config = {
     rules: [],
@@ -14,7 +20,7 @@ const getPreviewWebpackConfig = (
   const cssModuleReg = /(.*\.module).(s?css)+$/;
   const cssNormalReg = /^(?!.*\.module).*\.(s?css)+$/;
   const sassResouceLoader = {
-    loader: require.resolve('sass-resources-loader'),
+    loader: requireLocal('sass-resources-loader'),
     options: {
       resources: resolveLocal('.storybook/css/globals.scss'),
     },
@@ -26,16 +32,16 @@ const getPreviewWebpackConfig = (
   config.module.rules.push({
     test: cssModuleReg,
     use: [
-      'style-loader',
+      requireLocal('style-loader'),
       {
-        loader: require.resolve('css-loader'),
+        loader: requireLocal('css-loader'),
         options: {
           modules: {
             localIdentName: '[name]__[local]__[hash:base64:5]',
           },
         },
       },
-      'sass-loader',
+      requireLocal('sass-loader'),
       sassResouceLoader,
     ],
     sideEffects: true,
@@ -47,7 +53,7 @@ const getPreviewWebpackConfig = (
     test: cssNormalReg,
     use: [
       {
-        loader: require.resolve('postcss-loader'),
+        loader: requireLocal('postcss-loader'),
         options: {
           postcssOptions: {
             parser: 'postcss-scss',
@@ -63,8 +69,8 @@ const getPreviewWebpackConfig = (
           // reloadAll: true
         },
       },
-      'css-loader',
-      'sass-loader',
+      requireLocal('css-loader'),
+      requireLocal('sass-loader'),
       sassResouceLoader,
     ].filter(Boolean),
     include, // https://github.com/storybookjs/storybook/issues/4802#issuecomment-446233703
