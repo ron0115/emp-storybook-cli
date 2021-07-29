@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.10...v1.0.11) (2021-07-29)
+
+
+### Features
+
+* support global install mode ([efc33de](https://github.com/ron0115/emp-storybook-cli/commit/efc33dee22d5099078772ef9f0b372c478dd774f))
+
 ## [1.0.10](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.9...v1.0.10) (2021-07-28)
 
 
