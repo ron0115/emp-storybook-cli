@@ -11,7 +11,7 @@ if (
     'Global install mode, not exists react, start install react react-dom'
   );
   execSync(
-    'npm i react@16.8.0 react-dom@16.8.0',
+    'npm i react@^17 react-dom@^17',
     {
       cwd: resolveLocal(''),
       stdio: 'inherit',
