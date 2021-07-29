@@ -49,12 +49,9 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
  */
 module.exports = {
   // custom storybook config: https://storybook.js.org/docs/react/configure/overview
-  storybook: config => {
-    return {
-      ...config,
-      // override your storybook config
-      stories: [path.resolve(__dirname, './src/**/*.stories.@(jsx|tsx)')],
-    }
+  storybook: {
+    // override your storybook config, auto detect base on your project rootpath
+    stories: ['./src/**/*.stories.@(jsx|tsx)']
   },
   // custom preview webpack config
   previewWebpack: (config) => {
