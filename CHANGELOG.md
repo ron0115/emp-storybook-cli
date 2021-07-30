@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.13...v1.0.14) (2021-07-30)
+
+
+### Features
+
+* cover addon config ([8ed61d7](https://github.com/ron0115/emp-storybook-cli/commit/8ed61d7ae97f980cfacbf318a6c21611ea1cec71))
+
 ## [1.0.13](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.12...v1.0.13) (2021-07-29)
 
 
