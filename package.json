@@ -22,13 +22,13 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint src",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "release": "semantic-release",
-    "docs:dev": "node ./bin/cli.js dev",
-    "docs:build": "node ./bin/cli.js build",
+    "docs:dev": "cd test && node ../bin/cli.js dev",
+    "docs:build": "cd test && node ../bin/cli.js build",
     "postinstall": "node ./bin/postinstall.js"
   },
   "husky": {

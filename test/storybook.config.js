@@ -1,4 +1,4 @@
-const { EmpStorybookCli } = require('./dist/index');
+const { EmpStorybookCli } = require('../dist/index');
 
 /**
  * @type {EmpStorybookCli}

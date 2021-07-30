@@ -13,7 +13,13 @@ const generatedFiles = ['index.html', 'iframe.html', 'main.css'];
 beforeEach(() => remove(genPath));
 afterAll(() => remove(genPath));
 
-const run = (args = [], options = {}) =>
+const run = (
+  args = [],
+  options = {
+    stdio: 'inherit',
+    cwd: __dirname,
+  }
+) =>
   execa(
     'node',
     [resolve(__dirname, '../bin/cli.js'), 'build'].concat(args),
