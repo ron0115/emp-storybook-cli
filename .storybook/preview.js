@@ -1,10 +1,10 @@
-import React from 'react'
-import { addDecorator } from '@storybook/react'
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks'
-import './css/index.scss'
-import { themes } from '@storybook/theming'
+import React from 'react';
+import { addDecorator } from '@storybook/react';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import './css/index.scss';
+import { themes } from '@storybook/theming';
 
-global.STORYBOOK_REACT_CLASSES = {}
+global.STORYBOOK_REACT_CLASSES = {};
 
 // const storySort = categories => (a, b) => {
 //   const getStoryCategory = story => story[1].kind.split('/')[0]
@@ -15,22 +15,22 @@ global.STORYBOOK_REACT_CLASSES = {}
 
 export const parameters = {
   options: {
-    theme: themes[__THEME__.base],
+    theme: themes[__config_theme__.base],
     storySort: { order: ['文档', '组件'] },
-    viewMode: 'docs'
+    viewMode: 'docs',
   },
   docs: {
     container: DocsContainer,
     page: DocsPage,
     source: {
-      type: 'tsx'
+      type: 'tsx',
     },
     previewSource: 'open',
-    theme: themes[__THEME__.base]
-  }
-}
+    theme: themes[__config_theme__.base],
+  },
+};
 // addDecorator(withKnobs)
-addDecorator(story => <>{story()}</>)
+addDecorator((story) => <>{story()}</>);
 // const req = require.context('../stories', true, /\.stories\.((t|j)sx)$/)
 // function loadStories() {
 //   req.keys().forEach(filename => req(filename))
@@ -39,41 +39,41 @@ addDecorator(story => <>{story()}</>)
 
 {
   window.addEventListener('load', () => {
-    let loc = window.location.href
-    showCodeSamples()
+    let loc = window.location.href;
+    showCodeSamples();
     // 默认打开showCode
 
     window.setInterval(() => {
-      const newLoc = window.location.href
+      const newLoc = window.location.href;
 
       if (newLoc !== loc) {
-        loc = newLoc
-        showCodeSamples()
+        loc = newLoc;
+        showCodeSamples();
       }
-    }, 1000)
+    }, 1000);
     // 展开菜单
     window.parent.document
       .querySelectorAll(`.sidebar-subheading-action`)
-      .forEach(e => e.click())
-  })
+      .forEach((e) => e.click());
+  });
 
   function showCodeSamples() {
     try {
       const [a, ...docs] = document.querySelectorAll(
         '.sbdocs-content.sbdocs.sbdocs-preview'
-      )
-      ;[].forEach.call(docs, el => {
-        const buttons = el.querySelectorAll('button')
+      );
+      [].forEach.call(docs, (el) => {
+        const buttons = el.querySelectorAll('button');
         const codeButton = [].find.call(
           buttons,
-          el => el.textContent === 'Show code'
-        )
+          (el) => el.textContent === 'Show code'
+        );
         if (codeButton) {
-          codeButton.click()
+          codeButton.click();
         }
-      })
+      });
     } catch (e) {
-      console.warn(e)
+      console.warn(e);
     }
   }
 }

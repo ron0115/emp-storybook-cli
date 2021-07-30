@@ -58,15 +58,17 @@ module.exports = {
     config.plugins.push(new ModuleFederationPlugin({...}))
     return config
   },
-  // custom preview webpack config
+  // custom manager webpack config
   managerWebpack: config => config,
-  // custom theme config
+  // https://storybook.js.org/docs/react/configure/theming
   theme: {
     // auto get description/name in package.json, or custom by brandTitle
     brandTitle: 'EMP组件库',
     // 'light' | 'dark'
     theme: 'light'
-  }
+  },
+  // https://storybook.js.org/docs/react/configure/features-and-behavior
+  addons: {}
 }
 
 ```

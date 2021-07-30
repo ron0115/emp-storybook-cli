@@ -1,4 +1,6 @@
 import { StorybookConfig } from '@storybook/core-common/types/index';
+import { ThemeVars } from '@storybook/theming';
+import { Config } from '@storybook/addons';
 const { spawn } = require('child_process');
 const path = require('path');
 const rimraf = require('rimraf');
@@ -51,10 +53,8 @@ export const runDev = async () =>
 export type EmpStorybookCli = {
   storybook?: ((config: StorybookConfig) => StorybookConfig) | StorybookConfig;
   previewWebpack?: StorybookConfig['webpackFinal'];
-  theme?: {
-    base?: 'light' | 'dark';
-    brandTitle?: string;
-  };
+  theme?: ThemeVars;
+  addons?: Config;
   managerWebpack?: StorybookConfig['webpackFinal'];
 };
 
