@@ -94,7 +94,7 @@ module.exports = {
     "terser-webpack-plugin": "^5.0.0",
     "webpack-dev-middleware": "^4.1.0",
     "webpack-virtual-modules": "^0.4.2",
-    "mini-css-extract-plugin": "^1.3.9"
+    "mini-css-extract-plugin": "^0.9.0"
   }
 }
 ```
