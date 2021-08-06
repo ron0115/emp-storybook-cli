@@ -12,7 +12,11 @@ global.STORYBOOK_REACT_CLASSES = {};
 //   const indexB = categories.indexOf(getStoryCategory(b))
 //   return indexA === indexB ? 0 : indexA > indexB ? 1 : -1
 // }
-
+if (__config_theme__.base === 'light') {
+  require('./css/theme/light.scss');
+} else if (__config.theme.base === 'dark') {
+  require('./css/theme/dark.scss');
+}
 export const parameters = {
   options: {
     theme: themes[__config_theme__.base],
