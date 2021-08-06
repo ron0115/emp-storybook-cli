@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.14...v1.0.15) (2021-08-06)
+
+
+### Bug Fixes
+
+* 动态主题样式 ([5ed3489](https://github.com/ron0115/emp-storybook-cli/commit/5ed34897ed6d3ab182535b2748c7b947963e9705))
+
 ## [1.0.14](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.13...v1.0.14) (2021-07-30)
 
 
