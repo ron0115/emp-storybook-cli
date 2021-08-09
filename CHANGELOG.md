@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.15...v1.0.16) (2021-08-09)
+
+
+### Bug Fixes
+
+* 读取项目的babel配置 ([decb6a0](https://github.com/ron0115/emp-storybook-cli/commit/decb6a0f228d4342d7bbeabdd5253afe60ee6810))
+
 ## [1.0.15](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.14...v1.0.15) (2021-08-06)
 
 
