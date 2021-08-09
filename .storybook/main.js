@@ -46,6 +46,10 @@ const defaultConfig = {
   webpackFinal: (config) => getPreviewWebpackConfig(config),
   // manager webpack
   managerWebpack: (config) => getManagerWebpackConfig(config),
+  babel: (options) => ({
+    ...options,
+    ...resolveApp('./babel.config.js').default,
+  }),
 };
 
 const genConfig = (config) => {
