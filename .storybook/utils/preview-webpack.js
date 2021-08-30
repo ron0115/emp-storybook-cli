@@ -102,8 +102,8 @@ const getPreviewWebpackConfig = (
   config.module.rules[0].exclude = new RegExp(
     `node_modules\/(?!(${packageJSON.name})\/).*`
   );
-  // useful in global install mode
-  config.module.rules[0].include.push(resolveLocal('.storybook'));
+  // TODO:useful in global install mode
+  // config.module.rules[0].include.push(resolveLocal('.storybook'));
 
   config = customThemeDefined(config);
 
