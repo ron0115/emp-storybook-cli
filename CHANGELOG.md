@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.16...v1.0.17) (2021-08-30)
+
+
+### Bug Fixes
+
+* not support global and release ([270ee7d](https://github.com/ron0115/emp-storybook-cli/commit/270ee7d11ae4cce544a60becfb8de05e8e61f1f9))
+
 ## [1.0.16](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.15...v1.0.16) (2021-08-09)
 
 

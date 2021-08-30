@@ -2,7 +2,7 @@
   "name": "emp-storybook-cli",
   "author": "liangzhirong",
   "module": "dist/emp-storybook-cli.esm.js",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
