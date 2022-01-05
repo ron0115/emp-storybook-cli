@@ -34,7 +34,8 @@ export const parameters = {
   },
 };
 // addDecorator(withKnobs)
-addDecorator((story) => <>{story()}</>);
+addDecorator((story) => React.createElement(React.Fragment, null, story()));
+
 // const req = require.context('../stories', true, /\.stories\.((t|j)sx)$/)
 // function loadStories() {
 //   req.keys().forEach(filename => req(filename))
