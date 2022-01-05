@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.17...v1.0.18) (2022-01-05)
+
+
+### Bug Fixes
+
+* 锁定storybook插件的版本 ([cd6304c](https://github.com/ron0115/emp-storybook-cli/commit/cd6304cf3cc25d52bb44880c6bbf3bfc5a11d661))
+
 ## [1.0.17](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.16...v1.0.17) (2021-08-30)
 
 
