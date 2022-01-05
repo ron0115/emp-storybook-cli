@@ -94,8 +94,6 @@
     "@weiran.zsd/tsdx": "^0.15.2",
     "eslint": "^7.31.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
     "semantic-release": "^17.1.1"
   },
   "release": {
