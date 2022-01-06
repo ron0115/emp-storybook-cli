@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.18...v1.0.19) (2022-01-05)
+
+
+### Bug Fixes
+
+* support without jsx ([31e3e8f](https://github.com/ron0115/emp-storybook-cli/commit/31e3e8fcebf01bdf0f568f6cce5635b668bea650))
+
 ## [1.0.18](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.17...v1.0.18) (2022-01-05)
 
 
