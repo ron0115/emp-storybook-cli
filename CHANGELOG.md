@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.19...v1.0.20) (2022-01-06)
+
+
+### Bug Fixes
+
+* raw-loader miss ([01d8eeb](https://github.com/ron0115/emp-storybook-cli/commit/01d8eebf34d57e1040a41b9bff826089f2eaf5e3))
+
 ## [1.0.19](https://github.com/ron0115/emp-storybook-cli/compare/v1.0.18...v1.0.19) (2022-01-05)
 
 
