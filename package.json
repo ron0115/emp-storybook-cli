@@ -82,7 +82,8 @@
     "style-loader": "^3.2.1",
     "webpack": "5",
     "react": "^17",
-    "react-dom": "^17"
+    "react-dom": "^17",
+    "raw-loader": "^4.0.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
